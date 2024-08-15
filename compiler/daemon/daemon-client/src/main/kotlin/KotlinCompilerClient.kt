@@ -492,7 +492,7 @@ object KotlinCompilerClient {
         val workingDir = File(daemonOptions.runFilesPath).apply { mkdirs() }
         processBuilder.directory(workingDir)
         // assuming daemon process is deaf and (mostly) silent, so do not handle streams
-        val daemon = launchProcessWithFallback(processBuilder, reportingTargets, "daemon client")
+        val daemon = processBuilder.start()
 
         val isEchoRead = Semaphore(1)
         isEchoRead.acquire()

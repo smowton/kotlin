@@ -654,13 +654,6 @@ allprojects {
         }
 
         mavenCentral()
-
-        @Suppress("DEPRECATION")
-        jcenter {
-            content {
-                includeVersionByRegex("net\\.rubygrapefruit", ".+", "0\\.14")
-            }
-        }
     }
 }
 
